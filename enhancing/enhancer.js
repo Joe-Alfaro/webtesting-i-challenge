@@ -19,6 +19,23 @@ function succeed(item) {
 }
 
 function fail(item) {
+  if(item.enhancement === NaN || item.enhancement === undefined){
+    item.enhancement = 0;
+  }
+  
+  if(item.enhancement < 15) {
+    item.durability < 5
+      ? item.durability = 0
+      : item.durability -= 5
+  }
+  else{
+    item.durability < 10
+      ? item.durability = 0
+      : item.durability -= 10
+    item.enhancement > 16 
+      && item.enhancement--
+  }
+
   return { ...item };
 }
 

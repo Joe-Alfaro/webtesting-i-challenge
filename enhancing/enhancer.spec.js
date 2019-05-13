@@ -34,10 +34,10 @@ describe('enhancer.js', () => {
       item.durability = 12;
       expect(fail(item).durability).toBe(2);
     it('should decrease enhancement by 1 if enhancement is greater than 16', () => {
-      const item = {enhancement: 15}
-      expect(fail(item).enhancement).toBe(15);
-      item.enhancement = 16
-      expect(fail(item).enhancement).toBe(15);
+      const item = {enhancement: 16}
+      expect(fail(item).enhancement).toBe(16);
+      item.enhancement = 17
+      expect(fail(item).enhancement).toBe(16);
     })
   });
   describe('get() method', () => {
