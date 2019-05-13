@@ -41,6 +41,13 @@ describe('enhancer.js', () => {
     })
   });
   describe('get() method', () => {
-
+    it(`should append the passed item's name with the enhancement value if enhancement is greater than 0`, () => {
+      const item = {name: 'Iron Sword'};
+      expect(get(item).name).toBe('Iron Sword');
+      item.enhancement = 0;
+      expect(get(item).name).toBe('Iron Sword');
+      item.enhancement = 12;
+      expect(get(item).name).toBe('[+12] Iron Sword');
+    })
   });
 });
