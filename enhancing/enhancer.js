@@ -6,6 +6,15 @@ module.exports = {
 };
 
 function succeed(item) {
+  if(item.enhancement === NaN || item.enhancement === undefined) {
+    item.enhancement = 1;
+  }
+  else if(item.enhancement < 20) {
+    item.enhancement += 1;
+  }
+  else if(item.enhancement > 20) {
+    item.enhancement = 20;
+  }
   return { ...item };
 }
 

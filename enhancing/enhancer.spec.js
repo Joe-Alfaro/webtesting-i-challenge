@@ -11,8 +11,15 @@ describe('enhancer.js', () => {
     })
   });
 
-  describe('success() method', () => {
-
+  describe('succeed() method', () => {
+    it('should increase passed items enhancement by 1 if less than 20 or do nothing', () => {
+      const item = {};
+      expect(succeed(item).enhancement).toBe(1);
+      item.enhancement = 10;
+      expect(succeed(item).enhancement).toBe(11);
+      item.enhancement = 20;
+      expect(succeed(item).enhancement).toBe(20);
+    })
   });
   describe('fail() method', () => {
 
