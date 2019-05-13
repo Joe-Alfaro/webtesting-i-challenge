@@ -1,0 +1,14 @@
+{
+  "name": "webtesting-i-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Joe-Alfaro/webtesting-i-challenge.git",
+  "author": "joe-alfaro <josephlalfaro@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
