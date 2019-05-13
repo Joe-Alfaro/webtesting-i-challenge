@@ -22,7 +22,23 @@ describe('enhancer.js', () => {
     })
   });
   describe('fail() method', () => {
-
+    it('should decrease durability by 5 if enhancement is less than 15', () => {
+      const item = {enhancement: 14, durability: 3};
+      expect(fail(item).durability).toBe(0);
+      item.durability = 7;
+      expect(fail(item).durability).toBe(2);
+    })
+    it('should decrease durability by 10 if enhancement is greater than or equal to 15', () => {})
+      const item = {enhancement: 15, durability: 3};
+      expect(fail(item).durability).toBe(0);
+      item.durability = 12;
+      expect(fail(item).durability).toBe(2);
+    it('should decrease enhancement by 1 if enhancement is greater than 16', () => {
+      const item = {enhancement: 15}
+      expect(fail(item).enhancement).toBe(15);
+      item.enhancement = 16
+      expect(fail(item).enhancement).toBe(15);
+    })
   });
   describe('get() method', () => {
 
